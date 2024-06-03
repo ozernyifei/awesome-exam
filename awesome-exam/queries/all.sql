@@ -196,9 +196,9 @@ FROM inserted i, deleted d , Product p
 WHERE p.id = i.id
 END
 
-update product 
-set price = 1000.7
-where title = 'Laptop'
 
+BACKUP DATABASE Exam
+TO DISK = 'D:\db.bak'
 
-select * from HistoryCost
+RESTORE DATABASE Exam
+FROM DISK = 'D:\db.bak'
