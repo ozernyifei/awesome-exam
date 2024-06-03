@@ -7,6 +7,18 @@
         mc:Ignorable="d"
         Title="ClientWindow" Height="450" Width="800">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="5*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0"
+                   Text="Данные"
+                   FontSize="25"/>
+        <DockPanel Grid.Row="1">
+            
+        </DockPanel>
+        <DataGrid Grid.Row="2" x:Name="dg_DataGrid" AutoGenerateColumns="True">
+        </DataGrid>
     </Grid>
 </Window>

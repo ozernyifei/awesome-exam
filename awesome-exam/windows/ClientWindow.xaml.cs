@@ -1,4 +1,5 @@
-﻿using System;
+﻿using awesome_exam.DB;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,14 @@ namespace awesome_exam.windows
         public ClientWindow()
         {
             InitializeComponent();
+            GetList();
         }
+
+        private void GetList()
+        {
+            dg_DataGrid.ItemsSource = helper.EF.Context.UserOrderDataViews.ToList();
+        }
+
+        
     }
 }

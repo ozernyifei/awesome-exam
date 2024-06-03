@@ -36,6 +36,7 @@
                 Margin="0 30 0 0"
                 />
             <TextBox
+                x:Name="TbLogin"
                 Width="150"
                 Height="20"
                 BorderThickness="0 0 0 1"
@@ -49,6 +50,7 @@
                 Margin="0 30 0 0"
                 />
                 <PasswordBox
+                    x:Name="PbPassword"
                 Width="150"
                 Height="20"
                 BorderThickness="0 0 0 1"

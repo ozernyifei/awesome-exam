@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="05625cdb2c6146ccb57edfa1ed82c2fe" Name="Diagram1">
+        <EntityTypeShape EntityType="ExamModel.Employee" Width="1.5" PointX="3" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ExamModel.Gender" Width="1.5" PointX="0.75" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ExamModel.HistoryCost" Width="1.5" PointX="7.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ExamModel.Order" Width="1.5" PointX="5.25" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ExamModel.OrderStatu" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ExamModel.Product" Width="1.5" PointX="5.25" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ExamModel.ProductOrder" Width="1.5" PointX="7.5" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ExamModel.Role" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ExamModel.User" Width="1.5" PointX="3" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ExamModel.UserOrderDataView" Width="1.5" PointX="9.75" PointY="1.375" IsExpanded="true" />
+        <AssociationConnector Association="ExamModel.FK_Employee_Gender" ManuallyRouted="false" />
+        <AssociationConnector Association="ExamModel.FK_Employee_Role" ManuallyRouted="false" />
+        <AssociationConnector Association="ExamModel.FK_Order_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="ExamModel.FK_User_Gender" ManuallyRouted="false" />
+        <AssociationConnector Association="ExamModel.FK_Order_Status" ManuallyRouted="false" />
+        <AssociationConnector Association="ExamModel.FK_Order_User" ManuallyRouted="false" />
+        <AssociationConnector Association="ExamModel.FK_ProductOrder_Order" ManuallyRouted="false" />
+        <AssociationConnector Association="ExamModel.FK_ProductOrder_Product" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
