@@ -7,62 +7,60 @@
         mc:Ignorable="d"
         Title="AuthWindow" Height="450" Width="800">
     <Grid>
-        <StackPanel>
-            <TextBlock Text="Awesome App"
-                           FontSize="28"
-                           FontWeight="Bold"
-                           HorizontalAlignment="Center"
-                           Margin="0 10 0 0"
-                           Foreground="#6F4C5B"/>
-        <TextBlock Text="Авторизация"
-                           FontSize="18"
-                           HorizontalAlignment="Center"
-                           Margin="0 60 0 0"
-                           Foreground="#6F4C5B"/>
-        <TextBlock Text="Login"
-                   HorizontalAlignment="Center"
-                           Margin="10 50 0 0"/>
-        <TextBox x:Name="TbLogin" 
-                         Width="150" 
-                         Height="20"
-                         Margin="0 5 0 0"
-                         BorderThickness="0 0 0 1"
-                         BorderBrush="DarkGray"
-                         FontSize="12"
-                         Foreground="DarkGray"
-                         />
-        <TextBlock Text="Password"
-                   HorizontalAlignment="Center"
-                           Margin="10 10 0 0"
-                           FontSize="14"
-                           Foreground="Black"/>
-        <PasswordBox Name="PbPassword"
-                             Width="150"
-                             Height="20"
-                             Margin="0 5 0 0"
-                             BorderThickness="0 0 0 1"
-                             BorderBrush="DarkGray"
-                             Foreground="DarkGray"
-                             Password="Password"
-                             />
-
-            <Button Name="btnSignIn" 
-                        Width="100"
-                        Height="30" 
-                        Margin="0 40 0 0" 
-                        Content="Войти"
-                        Background="Black"
-                        Foreground="White"
-                        BorderThickness="0 0 0 0" 
-                        Click="btnSignIn_Click">
-
-                <Button.Resources>
-                    <Style TargetType="Border">
-                        <Setter Property="CornerRadius" 
-                                        Value="14"/>
-                    </Style>
-                </Button.Resources>
-            </Button>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="1"
+                    Background="LightGray">
+            <TextBlock
+                Text="Awesome App"
+                HorizontalAlignment="Center"
+                FontSize="25"
+                Foreground="Black"
+                Margin="0 20 0 0"
+                />
+            <TextBlock
+            Text="Авторизация"
+            HorizontalAlignment="Center"
+            FontSize="18"
+            Foreground="Black"
+            Margin="0 50 0 0"
+            />
+            <TextBlock
+                Text="Логин"
+                HorizontalAlignment="Center"
+                FontSize="16"
+                Foreground="Black"
+                Margin="0 30 0 0"
+                />
+            <TextBox
+                Width="150"
+                Height="20"
+                BorderThickness="0 0 0 1"
+                Text="Ваш логин"
+                Margin="0 20 0 0"/>
+            <TextBlock
+                Text="Пароль"
+                HorizontalAlignment="Center"
+                FontSize="16"
+                Foreground="Black"
+                Margin="0 30 0 0"
+                />
+                <PasswordBox
+                Width="150"
+                Height="20"
+                BorderThickness="0 0 0 1"
+                Password="Password"
+                Margin="0 10 0 0"/>
+            <Button
+                x:Name="btnSignIn"
+                Width="80"
+                Height="20"
+                Margin="0 30 0 0"
+                Content="Войти"
+                FontSize="12" Click="btnSignIn_Click_1"/>
         </StackPanel>
     </Grid>
 </Window>
