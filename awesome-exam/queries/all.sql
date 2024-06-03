@@ -94,7 +94,7 @@ ALTER TABLE [Order] ADD CONSTRAINT FK_Order_User
 FOREIGN KEY (UserID) REFERENCES [User](ID)
 
 ALTER TABLE [Order] ADD CONSTRAINT FK_Order_Employee
-FOREIGN KEY (Employee) REFERENCES Employee(ID)
+FOREIGN KEY (EmployeeID) REFERENCES Employee(ID)
 
 ALTER TABLE [Order] ADD CONSTRAINT FK_Order_Status
 FOREIGN KEY (OrderStatusID) REFERENCES OrderStatus(ID)
@@ -173,8 +173,6 @@ VALUES
 	(7, 4, 3),
 	(8, 5, 1);
 
-CREATE OR ALTER VIEW UserOrderDataView AS
-SELECT 
-	CONCAT(
+
 
 
