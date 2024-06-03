@@ -181,9 +181,20 @@ VALUES
 	(6, 1, 2),
 	(7, 4, 3),
 	(8, 5, 1);
+	go
 
+CREATE OR ALTER TRIGGER TG_AddChangedCostToHistory
+ON Product
+AFTER UPDATE
+AS
+IF NOT EXISTS
+(SELECT 1 FROM deleted d JOIN inserted i ON i.ID = d.ID WHERE i.Price = d.Price)
+BEGIN
+INSERT INTO HistoryCost (Title, OldCost, NewCost )
+SELECT i.Title, d.Price, i.Price
+FROM inserted i, deleted d , Product p
+END
 
-CREATE TRIGGER TG_AddChangedCostToHistory
-(
-	
-)
+update product 
+set price = 1000.4
+where title = 'Laptop'
