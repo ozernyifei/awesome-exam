@@ -1,5 +1,5 @@
---USE master
---DROP DATABASE Exam
+USE master
+DROP DATABASE Exam
 
 CREATE DATABASE Exam
 USE Exam
@@ -181,6 +181,9 @@ VALUES
 	(6, 1, 2),
 	(7, 4, 3),
 	(8, 5, 1);
+<<<<<<< HEAD
+GO
+=======
 	go
 
 CREATE OR ALTER TRIGGER TG_AddChangedCostToHistory
@@ -197,8 +200,21 @@ WHERE p.id = i.id
 END
 
 
+
 BACKUP DATABASE Exam
 TO DISK = 'D:\db.bak'
 
 RESTORE DATABASE Exam
 FROM DISK = 'D:\db.bak'
+go
+
+CREATE OR ALTER VIEW UserOrderDataView AS
+SELECT
+	CONCAT(FName,' ', SName, ' ', MName) AS 'FullName',
+	email,
+	o.SaleDate,
+	os.Title
+FROM [User] u
+JOIN [Order] o ON o.UserID = u.ID
+JOIN OrderStatus os ON o.OrderStatusID = os.ID
+GO
