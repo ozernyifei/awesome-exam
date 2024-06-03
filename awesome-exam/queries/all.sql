@@ -181,7 +181,28 @@ VALUES
 	(6, 1, 2),
 	(7, 4, 3),
 	(8, 5, 1);
+<<<<<<< HEAD
 GO
+=======
+	go
+
+CREATE OR ALTER TRIGGER TG_AddChangedCostToHistory
+ON Product
+AFTER UPDATE
+AS
+IF NOT EXISTS
+(SELECT 1 FROM deleted d JOIN inserted i ON i.ID = d.ID WHERE i.Price = d.Price)
+BEGIN
+INSERT INTO HistoryCost (Title, OldCost, NewCost )
+SELECT i.Title, d.Price, i.Price
+FROM inserted i, deleted d , Product p
+WHERE p.id = i.id
+END
+
+update product 
+set price = 1000.7
+where title = 'Laptop'
+>>>>>>> 055ed5786d9c0adf25f10f4d0d787851467edfa9
 
 CREATE OR ALTER VIEW UserOrderDataView AS
 SELECT
@@ -194,6 +215,7 @@ JOIN [Order] o ON o.UserID = u.ID
 JOIN OrderStatus os ON o.OrderStatusID = os.ID
 GO
 
+<<<<<<< HEAD
 --SELECT * FROM UserOrderDataView
 
 CREATE OR ALTER TRIGGER TR_Test ON Product
