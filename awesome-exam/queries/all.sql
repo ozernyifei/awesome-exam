@@ -81,6 +81,7 @@ CREATE TABLE HistoryCost
 	Title NVARCHAR(50) NOT NULL,
 	OldCost DECIMAL(10,2) NOT NULL,
 	NewCost DECIMAL(10,2) NOT NULL,
+	ChangedAt DATETIME NOT NULL DEFAULT GETDATE(),
 )
 
 ALTER TABLE Employee ADD CONSTRAINT FK_Employee_Role
@@ -182,4 +183,7 @@ VALUES
 	(8, 5, 1);
 
 
-
+CREATE TRIGGER TG_AddChangedCostToHistory
+(
+	
+)
