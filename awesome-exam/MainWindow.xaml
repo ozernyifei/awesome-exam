@@ -7,6 +7,46 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="100"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="1"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Width="200"
+                    >
+            <TextBlock
+                Text="Login"
+                FontSize="16"
+                Margin="5"
+                />
+            <TextBox
+                x:Name="TbLogin"
+                Margin="10"
+                Padding="5"
+                Height="30"
+                />
+            <TextBlock
+                Text="Password"
+                FontSize="16"
+                Margin="5"
+                />
+            <PasswordBox
+                x:Name="TbPassword"
+                Padding="5"
+                Height="30"
+                Margin="10"
+                />
+            <Button
+                x:Name="AuthButton"
+                Content="Auth"
+                Background="Transparent"
+                FontSize="20"
+                Margin="10"
+                Click="AuthButton_Click"
+                />
+        </StackPanel>
     </Grid>
 </Window>
