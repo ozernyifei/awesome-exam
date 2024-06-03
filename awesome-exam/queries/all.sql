@@ -81,6 +81,7 @@ CREATE TABLE HistoryCost
 	Title NVARCHAR(50) NOT NULL,
 	OldCost DECIMAL(10,2) NOT NULL,
 	NewCost DECIMAL(10,2) NOT NULL,
+	ChangedAt DATETIME NOT NULL DEFAULT GETDATE(),
 )
 
 ALTER TABLE Employee ADD CONSTRAINT FK_Employee_Role
@@ -182,5 +183,14 @@ VALUES
 	(8, 5, 1);
 
 
+CREATE OR ALTER VIEW UserOrderDataView AS
+SELECT
+	CONCAT(FName,' ', SName, ' ', MName) AS 'FullName',
+	email,
+	o.SaleDate,
+	os.Title
+FROM [User] u
+JOIN [Order] o ON o.UserID = u.ID
+JOIN OrderStatus os ON o.OrderStatusID = os.ID
 
-
+SELECT * FROM UserOrderDataView
