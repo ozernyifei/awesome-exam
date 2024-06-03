@@ -109,6 +109,10 @@ ALTER TABLE [Order] ADD CONSTRAINT FK_Order_Status
 FOREIGN KEY (OrderStatusID) REFERENCES OrderStatus(ID)
 
 
+ALTER TABLE [User]
+ADD CONSTRAINT CK_User_Email
+CHECK (Email like '%[A-Z0-9][@][A-Z0-9]%[.][A-Z0-9]%')
+
 INSERT INTO Gender
 VALUES
 	('Мужской'),
