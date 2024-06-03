@@ -23,7 +23,6 @@
                    HorizontalAlignment="Center"
                            Margin="10 50 0 0"/>
         <TextBox x:Name="TbLogin" 
-                         Text="Ваш логин"
                          Width="150" 
                          Height="20"
                          Margin="0 5 0 0"
@@ -43,20 +42,19 @@
                              Margin="0 5 0 0"
                              BorderThickness="0 0 0 1"
                              BorderBrush="DarkGray"
-                             Tag="Ваш пароль"
                              Foreground="DarkGray"
                              Password="Password"
                              />
 
             <Button Name="btnSignIn" 
-                        Click="BtnSignIn_Click"
                         Width="100"
                         Height="30" 
                         Margin="0 40 0 0" 
                         Content="Войти"
                         Background="Black"
                         Foreground="White"
-                        BorderThickness="0 0 0 0">
+                        BorderThickness="0 0 0 0" 
+                        Click="btnSignIn_Click">
 
                 <Button.Resources>
                     <Style TargetType="Border">
