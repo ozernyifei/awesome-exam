@@ -30,7 +30,30 @@ namespace awesome_exam.windows
         {
             dg_DataGrid.ItemsSource = helper.EF.Context.UserOrderDataViews.ToList();
         }
+        private void LoadComboBox()
+        {
+            var fullNames = helper.EF.Context.UserOrderDataViews
+                                .Select(u => u.FullName)
+                                .Distinct()
+                                .ToList();
+            ComboBoxFullName.ItemsSource = fullNames;
+        }
 
-        
-    }
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var selectedFullName = ComboBoxFullName.SelectedItem as string;
+            if (!string.IsNullOrEmpty(selectedFullName))
+            {
+                var filteredData = helper.EF.Context.UserOrderDataViews
+                                    .Where(u => u.FullName == selectedFullName)
+                                    .ToList();
+                DataGrid.ItemsSource = filteredData;
+            }
+            else
+            {
+                MessageBox.Show("Пожалуйста, выберите ФИО для фильтрации.");
+            }
+        }
+
+        }
 }
