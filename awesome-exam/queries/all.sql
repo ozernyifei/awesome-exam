@@ -115,21 +115,21 @@ CHECK (Email like '%[A-Z0-9][@][A-Z0-9]%[.][A-Z0-9]%')
 
 INSERT INTO Gender
 VALUES
-	('Мужской'),
-	('Женский');
+	('ГЊГіГ¦Г±ГЄГ®Г©'),
+	('Г†ГҐГ­Г±ГЄГЁГ©');
 
 	
 INSERT INTO [Role]
 VALUES
-	('Администатор'),
-	('Клиент'),
-	('Менеджер');
+	('ГЂГ¤Г¬ГЁГ­ГЁГ±ГІГ ГІГ®Г°'),
+	('ГЉГ«ГЁГҐГ­ГІ'),
+	('ГЊГҐГ­ГҐГ¤Г¦ГҐГ°');
 
 INSERT INTO OrderStatus
 VALUES
-	('В работе'),
-	('В пути'),
-	('Завершено');
+	('Г‚ Г°Г ГЎГ®ГІГҐ'),
+	('Г‚ ГЇГіГІГЁ'),
+	('Г‡Г ГўГҐГ°ГёГҐГ­Г®');
 
 INSERT INTO [User]
 VALUES 
@@ -207,6 +207,10 @@ END
 
 BACKUP DATABASE Exam
 TO DISK = 'D:\db.bak'
+
+BACKUP DATABASE Exam
+TO DISK = 'D:\db.bak'
+WITH DIFFERENTIAL
 
 RESTORE DATABASE Exam
 FROM DISK = 'D:\db.bak'
